@@ -2,7 +2,10 @@
     "name": "laravel/laravel",
     "type": "project",
     "description": "The skeleton application for the Laravel framework.",
-    "keywords": ["laravel", "framework"],
+    "keywords": [
+        "laravel",
+        "framework"
+    ],
     "license": "MIT",
     "require": {
         "php": "^8.2",
@@ -24,8 +27,8 @@
             "Database\\Seeders\\": "database/seeders/"
         },
         "files": [
-        "app/Helpers/AuthHelper.php"
-    ]
+            "app/Helpers/AuthHelper.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
@@ -35,18 +38,18 @@
     "scripts": {
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@/usr/bin/php artisan package:discover --ansi"
+            "@php artisan package:discover --ansi"
         ],
         "post-update-cmd": [
-            "@/usr/bin/php artisan vendor:publish --tag=laravel-assets --ansi --force"
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
         ],
         "post-root-package-install": [
-            "@/usr/bin/php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
         "post-create-project-cmd": [
-            "@/usr/bin/php artisan key:generate --ansi",
-            "@/usr/bin/php -r \"file_exists('database/database.sqlite') || touch('database/database.sqlite');\"",
-            "@/usr/bin/php artisan migrate --graceful --ansi"
+            "@php artisan key:generate --ansi",
+            "@php -r \"file_exists('database/database.sqlite') || touch('database/database.sqlite');\"",
+            "@php artisan migrate --graceful --ansi"
         ]
     },
     "extra": {
@@ -61,8 +64,7 @@
         "allow-plugins": {
             "pestphp/pest-plugin": true,
             "php-http/discovery": true
-        },
-        "cache-dir": "/home/vol18_2/infinityfree.com/if0_37285795/taruga.online/htdocs/cache"
+        }
     },
     "minimum-stability": "stable",
     "prefer-stable": true

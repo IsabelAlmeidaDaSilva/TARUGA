@@ -102,7 +102,11 @@
 
 .animatedBackInDown {
     animation: backInDown 2s;
-    
+}
+
+#animated {
+    width: 400px;
+    height: auto;
 }
 
 .animatedPulse {
@@ -115,6 +119,11 @@
     left: 50%;
     transform: translateX(-50%);
     cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.seta:hover {
+    transform: translateX(-50%) scale(1.15);
 }
 
 .seta img {
@@ -181,7 +190,7 @@
 /*Mudar IMG Carrosel*/
     {
     #Img1 {
-        content: url('imgs/https://itens-cabecalho.s3.us-east-1.amazonaws.com/Imgs/1_Small.png');
+        content: url('/storage/imgs/carousel/1_Small.png');
     }
 
     #divJuan {
@@ -195,7 +204,7 @@
 /*Mudar IMG Carrosel*/
     {
     #Img1 {
-        content: url('https://itens-cabecalho.s3.us-east-1.amazonaws.com/Imgs/1_Small.png');
+        content: url('/storage/imgs/carousel/1_Small.png');
     }
 
     #divJuan {
@@ -209,7 +218,7 @@
 /*Mudar IMG Carrosel*/
     {
         #Img1 {
-        content: url('https://itens-cabecalho.s3.us-east-1.amazonaws.com/Imgs/1_Small.png');
+        content: url('/storage/imgs/carousel/1_Small.png');
     }
 
     #divJuan {
@@ -223,7 +232,7 @@
 /*Mudar IMG Carrosel*/
     {
         #Img1 {
-        content: url('https://itens-cabecalho.s3.us-east-1.amazonaws.com/Imgs/1_Small.png');
+        content: url('/storage/imgs/carousel/1_Small.png');
     }
 
     #divJuan {
@@ -255,7 +264,7 @@
 /*Mudar IMG Carrosel*/
     {
     #Img2 {
-        content: url('https://itens-cabecalho.s3.us-east-1.amazonaws.com/Imgs/2_Small.png');
+        content: url('/storage/imgs/carousel/2_Small.png');
     }
 
     #divJuan {
@@ -269,7 +278,7 @@
 /*Mudar IMG Carrosel*/
     {
     #Img2 {
-        content: url('https://itens-cabecalho.s3.us-east-1.amazonaws.com/Imgs/2_Small.png');
+        content: url('/storage/imgs/carousel/2_Small.png');
     }
 
     #divJuan {
@@ -283,7 +292,7 @@
 /*Mudar IMG Carrosel*/
     {
         #Img2 {
-        content: url('https://itens-cabecalho.s3.us-east-1.amazonaws.com/Imgs/2_Small.png');
+        content: url('/storage/imgs/carousel/2_Small.png');
     }
 
     #divJuan {
@@ -297,7 +306,7 @@
 /*Mudar IMG Carrosel*/
     {
         #Img2 {
-        content: url('https://itens-cabecalho.s3.us-east-1.amazonaws.com/Imgs/2_Small.png');
+        content: url('/storage/imgs/carousel/2_Small.png');
     }
 
     #divJuan {
@@ -312,7 +321,7 @@
 /*Mudar IMG Carrosel*/
     {
     #Img3 {
-        content: url('https://itens-cabecalho.s3.us-east-1.amazonaws.com/Imgs/3_Small.png');
+        content: url('/storage/imgs/carousel/3_Small.png');
     }
 
     #divJuan {
@@ -326,7 +335,7 @@
 /*Mudar IMG Carrosel*/
     {
     #Img3 {
-        content: url('https://itens-cabecalho.s3.us-east-1.amazonaws.com/Imgs/3_Small.png');
+        content: url('/storage/imgs/carousel/3_Small.png');
     }
 
     #divJuan {
@@ -340,7 +349,7 @@
 /*Mudar IMG Carrosel*/
     {
         #Img3 {
-        content: url('https://itens-cabecalho.s3.us-east-1.amazonaws.com/Imgs/3_Small.png');
+        content: url('/storage/imgs/carousel/3_Small.png');
     }
 
     #divJuan {
@@ -354,7 +363,7 @@
 /*Mudar IMG Carrosel*/
     {
         #Img3 {
-        content: url('https://itens-cabecalho.s3.us-east-1.amazonaws.com/Imgs/3_Small.png');
+        content: url('/storage/imgs/carousel/3_Small.png');
     }
 
     #divJuan {
@@ -369,7 +378,7 @@
 /*Mudar IMG Carrosel*/
     {
     #Img4 {
-        content: url('https://itens-cabecalho.s3.us-east-1.amazonaws.com/Imgs/4_Small.png');
+        content: url('/storage/imgs/carousel/4_Small.png');
     }
 
     #divJuan {
@@ -383,7 +392,7 @@
 /*Mudar IMG Carrosel*/
     {
     #Img4 {
-        content: url('https://itens-cabecalho.s3.us-east-1.amazonaws.com/Imgs/4_Small.png');
+        content: url('/storage/imgs/carousel/4_Small.png');
     }
 
     #divJuan {
@@ -397,7 +406,7 @@
 /*Mudar IMG Carrosel*/
     {
         #Img4 {
-        content: url('https://itens-cabecalho.s3.us-east-1.amazonaws.com/Imgs/4_Small.png');
+        content: url('/storage/imgs/carousel/4_Small.png');
     }
 
     #divJuan {
@@ -411,7 +420,7 @@
 /*Mudar IMG Carrosel*/
     {
         #Img4 {
-        content: url('https://itens-cabecalho.s3.us-east-1.amazonaws.com/Imgs/4_Small.png');
+        content: url('/storage/imgs/carousel/4_Small.png');
     }
 
     #divJuan {

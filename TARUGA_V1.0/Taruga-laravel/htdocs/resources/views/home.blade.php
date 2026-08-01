@@ -18,7 +18,7 @@
     <div id="container1" class="container1">
         <!-- Div Esquerda -->
         <div class="esquerda">
-            <img id="animated" class="animatedBackInDown" src="https://itens-cabecalho.s3.us-east-1.amazonaws.com/Imgs/TarugaBemVindos.png" alt="Sejam bem-vindos ao Taruga!">
+            <img id="animated" class="animatedBackInDown" src="{{ asset('storage/imgs/TarugaBemVindos.png') }}" alt="Sejam bem-vindos ao Taruga!">
             <div class="alignButton animatedBackInDown">
                
             <a href="{{ route('identification') }}" method="GET">
@@ -29,12 +29,12 @@
         </div>
         <!-- Div Direita -->
         <div class="direita">
-            <img class="animatedBackInDown" src="https://itens-cabecalho.s3.us-east-1.amazonaws.com/Imgs/Pingu.gif" alt="Animação de um pinguim dançando">
+            <img class="animatedBackInDown" src="{{ asset('storage/imgs/Pingu.gif') }}" alt="Animação de um pinguim dançando">
         </div>
 
         <!-- Div Seta -->
         <div class="seta d-flex justify-content-center align-items-center" id="scrollArrow">
-            <img class="animatedBackInDown" src="https://itens-cabecalho.s3.us-east-1.amazonaws.com/Imgs/Seta.png" alt="Seta para descer a tela">
+            <img class="animatedBackInDown" src="{{ asset('storage/imgs/Seta.png') }}" alt="Seta para descer a tela">
         </div>
     </div>
 
@@ -57,23 +57,23 @@
                 </div>
                 <div class="carousel-inner" id="divJuan">
                     <div class="carousel-item active d-flex justify-content-center align-items-center">
-                        <a href=""><img id="Img1" src="https://itens-cabecalho.s3.us-east-1.amazonaws.com/Imgs/1_Large.png" class="d-block w-100 img-fluid"
+                        <a href=""><img id="Img1" src="{{ asset('storage/imgs/carousel/1_Large.png') }}" class="d-block w-100 img-fluid"
                                 alt="Primeira apresentação"></a>
                     </div>
                     <div class="carousel-item">
-                        <a href=""><img id="Img2" src="https://itens-cabecalho.s3.us-east-1.amazonaws.com/Imgs/2_Large.png" class="d-block w-100 img-fluid"
+                        <a href=""><img id="Img2" src="{{ asset('storage/imgs/carousel/2_Large.png') }}" class="d-block w-100 img-fluid"
                                 alt="Segunda apresentação"></a>
                     </div>
                     <div class="carousel-item">
-                        <a href=""><img id="Img3" src="https://itens-cabecalho.s3.us-east-1.amazonaws.com/Imgs/3_Large.png" class="d-block w-100 img-fluid"
+                        <a href=""><img id="Img3" src="{{ asset('storage/imgs/carousel/3_Large.png') }}" class="d-block w-100 img-fluid"
                                 alt="Terceira apresentação"></a>
                     </div>
                     <div class="carousel-item">
-                        <a href=""><img id="Img4" src="https://itens-cabecalho.s3.us-east-1.amazonaws.com/Imgs/4_Large.png" class="d-block w-100 img-fluid"
+                        <a href=""><img id="Img4" src="{{ asset('storage/imgs/carousel/4_Large.png') }}" class="d-block w-100 img-fluid"
                                 alt="Quarta apresentação"></a>
                     </div>
                     <div class="carousel-item">
-                        <a href=""><img id="Img5" src="https://itens-cabecalho.s3.us-east-1.amazonaws.com/Imgs/5_Large.png" class="d-block w-100 img-fluid"
+                        <a href=""><img id="Img5" src="{{ asset('storage/imgs/carousel/5_Large.png') }}" class="d-block w-100 img-fluid"
                                 alt="Quinta apresentação"></a>
                     </div>
                 </div>
