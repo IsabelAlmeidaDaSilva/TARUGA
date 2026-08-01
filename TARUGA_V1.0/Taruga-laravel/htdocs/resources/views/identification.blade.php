@@ -20,27 +20,26 @@
         {{ session('success') }}
     </div>
 @endif
-
-    <!-- Seta -->
-    <div class="seta">
-        <a onclick="window.history.back()">
-            <i class="iconSeta bi bi-arrow-left-circle-fill fs-1"></i>
-        </a>
-    </div>
     <!--Centro página-->
     
     <div class="alignCenter">
       <div class="container-bemVindo">
         <div class="header-conteiner">
+          <!-- Seta -->
+          <div class="seta">
+            <a onclick="window.history.back()">
+              <i class="iconSeta bi bi-arrow-left-circle-fill fs-1"></i>
+            </a>
+          </div>
           <p>BEM VINDO AO TARUGA! POR FAVOR NOS INFORME QUEM VOCÊ É:</p>
         </div>
-
             <div class="pais">
               <div class="professor">
                 <div class="align-img">
                    <img
-                      src="https://itens-cabecalho.s3.us-east-1.amazonaws.com/Professora_TelaIdent.png"
+                      src="{{ asset('storage/imgs/Professora_TelaIdent.png') }}"
                       alt="Imagem de uma professora"
+                      style="width: auto; height: 160px; margin-bottom: 10px;"
                    />
                  </div>
                 <div class="align-p">
@@ -54,8 +53,9 @@
             <div class="aluno">
               <div class="align-img">
                 <img
-                  src="https://itens-cabecalho.s3.us-east-1.amazonaws.com/Bolsa_TelaIdent.png"
+                  src="{{ asset('storage/imgs/Bolsa_TelaIdent.png') }}"
                   alt="Imagem de uma bolsa escolar"
+                  style="width: auto; height: 160px; margin-bottom: 10px;"
                 />
               </div>
               <div class="align-p">
@@ -69,8 +69,9 @@
             <div class="instituicao">
               <div class="align-img">
                 <img
-                  src="https://itens-cabecalho.s3.us-east-1.amazonaws.com/Escola_TelaIdent.png"
+                  src="{{ asset('storage/imgs/Escola_TelaIdent.png') }}"
                   alt="Imagem de uma instituição escolar"
+                  style="width: 150px; height: 160px; margin-bottom: 10px;"
                 />
               </div>
               <div class="align-p">
@@ -84,8 +85,9 @@
             <div class="comunUser">
               <div class="align-img">
                 <img
-                  src="https://itens-cabecalho.s3.us-east-1.amazonaws.com/User_TelaIdent.png"
+                  src="{{ asset('storage/imgs/User_TelaIdent.png') }}"
                   alt="Foto do simbolo de um usuário"
+                  style="width: 150px; height: 160px; margin-bottom: 10px;"
                 />
               </div>
               <div class="align-p">

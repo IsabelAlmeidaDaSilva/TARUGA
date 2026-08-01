@@ -435,7 +435,7 @@
 /*Mudar IMG Carrosel*/
     {
     #Img5 {
-        content: url('https://itens-cabecalho.s3.us-east-1.amazonaws.com/Imgs/5_Small.png');
+        content: url('/storage/imgs/carousel/5_Small.png');
     }
 
     #divJuan {
@@ -449,7 +449,7 @@
 /*Mudar IMG Carrosel*/
     {
     #Img5 {
-        content: url('https://itens-cabecalho.s3.us-east-1.amazonaws.com/Imgs/5_Small.png');
+        content: url('/storage/imgs/carousel/5_Small.png');
     }
 
     #divJuan {
@@ -463,7 +463,7 @@
 /*Mudar IMG Carrosel*/
     {
         #Img5 {
-        content: url('https://itens-cabecalho.s3.us-east-1.amazonaws.com/Imgs/5_Small.png');
+        content: url('/storage/imgs/carousel/5_Small.png');
     }
 
     #divJuan {
@@ -477,7 +477,7 @@
 /*Mudar IMG Carrosel*/
     {
         #Img5 {
-        content: url('https://itens-cabecalho.s3.us-east-1.amazonaws.com/Imgs/5_Small.png');
+        content: url('/storage/imgs/carousel/5_Small.png');
     }
 
     #divJuan {

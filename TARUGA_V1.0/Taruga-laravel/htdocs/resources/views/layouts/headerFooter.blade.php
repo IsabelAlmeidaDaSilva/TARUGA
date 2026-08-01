@@ -25,8 +25,19 @@
      <!-- Header -->
      <nav class="header navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand" href="{{ route('home') }}">
-                <img class="logoImg" src="https://itens-cabecalho.s3.us-east-1.amazonaws.com/taruga_logo_escrito+(1).png" alt="Logo do taruga">
+            <a class="navbar-brand"
+                href="{{ route('home') }}"
+                style="transition: transform .2s ease;"
+                onmouseover="this.style.transform='scale(1.08)'"
+                onmouseout="this.style.transform='scale(1)'">
+                <img class="logoImg"
+                    src="{{ asset('storage/imgs/Taruga_Icon.png') }}"
+                    alt="Ícone da Tartaruguinha"
+                    style="width: auto; height: 45px; margin-bottom: 10px;" />
+                <img class="logoImg"
+                    src="{{ asset('storage/imgs/Taruga_Logo.png') }}"
+                    alt="Logo da Tartaruguinha"
+                style="width: auto; height: 35px; margin-bottom: 10px;" />
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
