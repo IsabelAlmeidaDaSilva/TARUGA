@@ -28,10 +28,13 @@
           <!-- Seta -->
           <div class="seta">
             <a onclick="window.history.back()">
-              <i class="iconSeta bi bi-arrow-left-circle-fill fs-1"></i>
+              <i class="iconSeta bi bi-arrow-left-circle-fill text-white fs-1"></i>
             </a>
           </div>
-          <p>BEM VINDO AO TARUGA! POR FAVOR NOS INFORME QUEM VOCÊ É:</p>
+          <div class="BemVindoP">
+            <p style="font-weight: 130; line-height: 0.8; font-size: 50px; margin: 0px; padding: 0px;">BEM VINDO AO TARUGA!</p>
+            <p>NOS INFORME QUEM VOCÊ É:</p>
+          </div>
         </div>
             <div class="pais">
               <div class="professor">
@@ -41,9 +44,9 @@
                       alt="Imagem de uma professora"
                       style="width: auto; height: 160px; margin-bottom: 10px;"
                    />
-                 </div>
+                </div>
                 <div class="align-p">
-                    <p>Sou professor (a)!</p>
+                    <p>Professor(a)</p>
                 </div>
                 <div class="align-button">
                   <a href="{{ route('choose-login', 'teacher') }}" class="btn">Entrar</a>
@@ -59,7 +62,7 @@
                 />
               </div>
               <div class="align-p">
-                <p>Sou aluno (a)!</p>
+                <p>Aluno(a)</p>
               </div>
               <div class="align-button">
                 <a href="{{ route('choose-login', 'student') }}" class="btn">Entrar</a>
@@ -75,7 +78,7 @@
                 />
               </div>
               <div class="align-p">
-                <p>Sou instituição!</p>
+                <p>Instituição</p>
               </div>
               <div class="align-button">
                  <a href="{{ route('choose-login', 'institution') }}" class="btn">Entrar</a>
@@ -91,7 +94,7 @@
                 />
               </div>
               <div class="align-p">
-                <p>Sou usuário comum!</p>
+                <p>Usuário(a)</p>
               </div>
 
               <div class="align-button">
@@ -99,23 +102,30 @@
               </div>
             </div>
       </div>
-
-          <div id="openPopupButton" class="btn-align">
-
-              <button class="btnNTC">
-                  Não tenho cadastro
-              </button>
-            </div>
+      <div class="align-openPopupButton">
+        <div class="align-itens-popup-button">
+          <div class="div-img-icon-more">
+            <img src="{{ asset('storage/imgs/icon_more.png') }}" alt="icone de +">
           </div>
-
+          <div class="div-p-text-cadastro">
+            <p style="font-weight: 130; line-height: 0.8; font-size: 25px; margin: 0px; padding: 0px;" class="textoCadastro">Ainda não possui uma cadastro?</p>
+            <p class="textoCadastro">Crie sua conta agora mesmo e aproveite tudo que o Taruga oferece!</p>
+          </div>
+          <div class="div-btn-btnNTC">
+            <button id="openPopupButton">
+                Criar conta
+            </button>
+          </div>
+        </div>
+      </div>
 
           <!-- Popup -->
 <div id="popup" class="popup-overlay" style="display: none;">
     <div class="popup-content">
-        <span class="close-button" id="closePopupButton"><img src="https://itens-cabecalho.s3.us-east-1.amazonaws.com/close_button.png"></span>
+        <span class="close-button" id="closePopupButton"><img src="{{ asset('storage/imgs/iconx.png') }}"></span>
         <p>Como você gostaria de se cadastrar?</p>
-        <button><a href="{{ route('choose-register', 'institution') }}"><img src="https://itens-cabecalho.s3.us-east-1.amazonaws.com/Escola_TelaIdent.png">Como Instiuição!</a></button>
-        <button><a href="{{ route('choose-register', 'student') }}"><img src="https://itens-cabecalho.s3.us-east-1.amazonaws.com/User_TelaIdent.png">Como usuário comum!</a></button>
+        <button><a href="{{ route('choose-register', 'institution') }}"><img src="{{ asset('storage/imgs/Escola_TelaIdent.png') }}">Como Instiuição!</a></button>
+        <button><a href="{{ route('choose-register', 'student') }}"><img src="{{ asset('storage/imgs/User_TelaIdent.png') }}">Como usuário comum!</a></button>
     </div>
 </div>
 

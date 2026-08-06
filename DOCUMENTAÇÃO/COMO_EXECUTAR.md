@@ -25,7 +25,7 @@ Antes de executar o sistema, verifique se os seguintes programas estão instalad
 1. Extraia os arquivos do projeto e acesse a pasta:
 
 ```
-TARUGA/TARUGA_V1.0/Taruga-laravel/htdocs
+C:\Users\User\Documents\GitHub\TARUGA\TARUGA_V1.0\Taruga-laravel\htdocs
 ```
 
 2. Abra um terminal nessa pasta.
