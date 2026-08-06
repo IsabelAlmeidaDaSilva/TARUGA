@@ -124,8 +124,8 @@
     <div class="popup-content">
         <span class="close-button" id="closePopupButton"><img src="{{ asset('storage/imgs/iconx.png') }}"></span>
         <p>Como você gostaria de se cadastrar?</p>
-        <button><a href="{{ route('choose-register', 'institution') }}"><img src="{{ asset('storage/imgs/Escola_TelaIdent.png') }}">Como Instiuição!</a></button>
-        <button><a href="{{ route('choose-register', 'student') }}"><img src="{{ asset('storage/imgs/User_TelaIdent.png') }}">Como usuário comum!</a></button>
+        <button><a href="{{ route('choose-register', 'institution') }}"><img src="{{ asset('storage/imgs/Escola_TelaIdent.png') }}">Instiuição!</a></button>
+        <button><a href="{{ route('choose-register', 'student') }}"><img src="{{ asset('storage/imgs/User_TelaIdent.png') }}">Usuário</a></button>
     </div>
 </div>
 
