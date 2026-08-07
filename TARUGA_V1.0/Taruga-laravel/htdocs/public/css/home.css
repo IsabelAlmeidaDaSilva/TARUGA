@@ -14,7 +14,7 @@
 .container1 {
     width: 100%;
     height: 100vh;
-    background: #D7FBBC;
+    background: #eefce3;
     position: relative;
     display: flex;
     justify-content: center;
@@ -25,7 +25,7 @@
 .container2 {
     width: 100%;
     height: 100vh;
-    background: #cabacf;
+    background: #eefce3;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -95,7 +95,7 @@
     animation-direction: alternate;
     animation-timing-function: ease-in-out;
     box-shadow: 1px #36C299;
-    background: #598a18;
+    background: #a5d16c;
     transition: 0.5s;
 }
 
@@ -135,7 +135,8 @@
 .carousel-inner {
     height: 450px;
     overflow: hidden;
-    border: black 1px solid;
+    border: #268a7a 2px solid;
+    border-radius: 10px;
 }
 
 .carousel-item img {
@@ -156,7 +157,7 @@
     width: 450px;
     height: 45px;
     border-radius: 25px;
-    border: 2px solid black;
+    border: 2px solid #268a7a;
     background-color: #FF007A;
     justify-content: center;
     align-items: center;
@@ -196,7 +197,7 @@
     #divJuan {
         height: 365px;
         overflow: hidden;
-        border: black 1px solid;
+        border: #268a7a 2px solid;
     }
 }
 
@@ -210,7 +211,7 @@
     #divJuan {
         height: 465px;
         overflow: hidden;
-        border: black 1px solid;
+        border: #268a7a 2px solid;
     }
 }
 
@@ -224,7 +225,7 @@
     #divJuan {
         height: 680px;
         overflow: hidden;
-        border: black 1px solid;
+        border: #268a7a 2px solid;
     }
 }
 
@@ -238,7 +239,7 @@
     #divJuan {
         height: 680px;
         overflow: hidden;
-        border: black 1px solid;
+        border: #268a7a 2px solid;
     }
 }
 /*Carrosel*/
@@ -248,7 +249,7 @@
     #divJuan {
         height: 290px;
         overflow: hidden;
-        border: black 1px solid;
+        border: #268a7a 2px solid;
     }
 }
 
@@ -270,7 +271,7 @@
     #divJuan {
         height: 365px;
         overflow: hidden;
-        border: black 1px solid;
+        border: #268a7a 2px solid;
     }
 }
 
@@ -284,7 +285,7 @@
     #divJuan {
         height: 465px;
         overflow: hidden;
-        border: black 1px solid;
+        border: #268a7a 2px solid;
     }
 }
 
@@ -298,7 +299,7 @@
     #divJuan {
         height: 680px;
         overflow: hidden;
-        border: black 1px solid;
+        border: #268a7a 2px solid;
     }
 }
 
@@ -312,7 +313,7 @@
     #divJuan {
         height: 680px;
         overflow: hidden;
-        border: black 1px solid;
+        border: #268a7a 2px solid;
     }
 }
 /*Fim*/
@@ -327,7 +328,7 @@
     #divJuan {
         height: 365px;
         overflow: hidden;
-        border: black 1px solid;
+        border: #268a7a 2px solid;
     }
 }
 
@@ -341,7 +342,7 @@
     #divJuan {
         height: 465px;
         overflow: hidden;
-        border: black 1px solid;
+        border: #268a7a 2px solid;
     }
 }
 
@@ -355,7 +356,7 @@
     #divJuan {
         height: 680px;
         overflow: hidden;
-        border: black 1px solid;
+        border: #268a7a 2px solid;
     }
 }
 
@@ -369,7 +370,7 @@
     #divJuan {
         height: 680px;
         overflow: hidden;
-        border: black 1px solid;
+        border: #268a7a 2px solid;
     }
 }
 /*Fim*/
@@ -384,7 +385,7 @@
     #divJuan {
         height: 365px;
         overflow: hidden;
-        border: black 1px solid;
+        border: #268a7a 2px solid;
     }
 }
 
@@ -398,7 +399,7 @@
     #divJuan {
         height: 465px;
         overflow: hidden;
-        border: black 1px solid;
+        border: #268a7a 2px solid;
     }
 }
 
@@ -412,7 +413,7 @@
     #divJuan {
         height: 680px;
         overflow: hidden;
-        border: black 1px solid;
+        border: #268a7a 2px solid;
     }
 }
 
@@ -426,7 +427,7 @@
     #divJuan {
         height: 680px;
         overflow: hidden;
-        border: black 1px solid;
+        border: #268a7a 2px solid;
     }
 }
 /*Fim*/
@@ -441,7 +442,7 @@
     #divJuan {
         height: 365px;
         overflow: hidden;
-        border: black 1px solid;
+        border: #268a7a 2px solid;
     }
 }
 
@@ -455,7 +456,7 @@
     #divJuan {
         height: 465px;
         overflow: hidden;
-        border: black 1px solid;
+        border: #268a7a 2px solid;
     }
 }
 
@@ -469,7 +470,7 @@
     #divJuan {
         height: 680px;
         overflow: hidden;
-        border: black 1px solid;
+        border: #268a7a 2px solid;
     }
 }
 
@@ -483,7 +484,7 @@
     #divJuan {
         height: 680px;
         overflow: hidden;
-        border: black 1px solid;
+        border: #268a7a 2px solid;
     }
 }
 /*Fim*/
