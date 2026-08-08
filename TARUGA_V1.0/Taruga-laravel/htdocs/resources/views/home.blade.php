@@ -18,7 +18,14 @@
     <div id="container1" class="container1">
         <!-- Div Esquerda -->
         <div class="esquerda">
-            <img id="animated" class="animatedBackInDown" src="{{ asset('storage/imgs/TarugaBemVindos.png') }}" alt="Sejam bem-vindos ao Taruga!">
+            <div>
+                <img id="animated" class="animatedBackInDown" src="{{ asset('storage/imgs/TarugaBemVindos.png') }}" alt="Sejam bem-vindos ao Taruga!">
+                <div id="animated" class="animatedBackInDown">
+                    <div class="sub-titulo-bemvindos">
+                        <p>Aprender pode ser uma grande aventura!</p>
+                    </div>
+                </div>
+            </div>
             <div class="alignButton animatedBackInDown">
                
             <a href="{{ route('identification') }}" method="GET">
@@ -29,7 +36,7 @@
         </div>
         <!-- Div Direita -->
         <div class="direita">
-            <img class="animatedBackInDown" src="{{ asset('storage/imgs/Pingu.gif') }}" alt="Animação de um pinguim dançando">
+            <img class="animatedBackInDown" src="{{ asset('storage/imgs/TarugaBemVindosG.gif') }}" alt="Animação de uma tartaruga andando">
         </div>
 
         <!-- Div Seta -->
