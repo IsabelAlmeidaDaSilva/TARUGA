@@ -44,7 +44,7 @@
 
       <div class="alignLog">
         <div id="AlignTituloLogin">
-          <h1>Login</h1>
+          <h1>LOGIN</h1>
         </div>
 
 

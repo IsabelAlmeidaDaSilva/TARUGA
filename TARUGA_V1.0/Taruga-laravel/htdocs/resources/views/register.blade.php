@@ -8,53 +8,49 @@
   <link rel="stylesheet" href=" {{ asset('css/register.css')}}?v={{ time() }}">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jost" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jost" />
-  <link rel="preconnect" href="https://fonts.googleapis.com"> 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
-  
 
-  <title>Formulário</title>
+
+  <title>Register</title>
 
 </head>
 
 <body>
 
 
- <!-- Seta -->
- <div class="seta">
-        <a onclick="window.history.back()">
-            <i class="iconSeta bi bi-arrow-left-circle-fill fs-1"></i>
-        </a>
-    </div>
-
+  <!-- Seta -->
+  <div class="seta">
+    <a onclick="window.history.back()">
+      <i class="iconSeta bi bi-arrow-left-circle-fill fs-1"></i>
+    </a>
+  </div>
 
   <div class="alignDivForm">
     <div class="DivForm">
       <div class="div-DivInf">
-        
-      <div class="DivInf">
-          <p id="TarugaTitulo">Taruga</p>
-          <p id="BemVindoTitulo">BEM-VINDO(a)!<br /></p>
-
-          <p id="TextTitulo">
-            Novo por aqui? crie<br />
-            sua conta e venha se<br />
-            divertir com a gente!<br />
+        <div class="DivInf">
+          <p id="BemVindoTitulo">
+            Bem-vindo(a) ao Taruga!<br/>
           </p>
-          
+          <div id="AlignImgDivInf">
+            <img
+              src="{{ asset('storage/imgs/Register.png') }}"
+              alt="Imagem de BemVindos" />
+          </div>
         </div>
       </div>
 
-      
       <div class="alignLog">
-      
+
         <form action="{{ $userType === 'student' ? route('student.register') : route('institution.register') }}" method="POST">
           @csrf
-          <div id="AlignTituloLogin">
-            <h2>Crie a sua conta!</h2>
+          <div id="TituloRegistro">
+            <h2>REGISTRO</h2>
           </div>
-          
+
           <div class="inputBox">
             <input
               type="text"
@@ -64,7 +60,7 @@
               required
               placeholder="Nome " />
           </div>
-         
+
 
           <div class="inputBox">
             <input
@@ -78,35 +74,35 @@
 
 
           @if($userType === 'student')
-            <!-- Campos específicos para Estudantes -->
-            <div class="inputBox">
-              <select id="situacao" name="situacao" required>
-                <option value="" selected disabled>Situação</option>
-                <option value="Ouvinte">Ouvinte</option>
-                <option value="Não-ouvinte">Não-Ouvinte</option>
-              </select>
-            </div>
-
-            @elseif($userType === 'institution')
-            <!-- Campos específicos para Instituições -->
-            <div class="inputBox">
-              <input type="text" name="cnpj" id="cnpj" class="inputUser" required placeholder="CNPJ" 
-              maxlength="18"
-              pattern="\d{2}\.\d{3}\.\d{3}/\d{4}-\d{2}" 
-              title="O CNPJ deve estar no formato 00.000.000/0000-00">
-            </div>
-            <div class="inputBox">
-              <input type="text" name="endereco" id="endereco" class="inputUser" required placeholder="Endereço completo" />
+          <!-- Campos específicos para Estudantes -->
+          <div class="inputBox">
+            <select id="situacao" name="situacao" required>
+              <option value="" selected disabled>Situação</option>
+              <option value="Ouvinte">Ouvinte</option>
+              <option value="Não-ouvinte">Não-Ouvinte</option>
+            </select>
           </div>
 
-            <div class="inputBox">
-              <input type="text" name="telefone" id="telefone" class="inputUser" required placeholder="Telefone" 
-              maxlength="15"
-              pattern="\(\d{2}\)\s\d{4,5}-\d{4}" 
-              title="O telefone deve estar no formato (00) 00000-0000" />
-            </div>
+          @elseif($userType === 'institution')
+          <!-- Campos específicos para Instituições -->
+          <div class="inputBox">
+            <input type="text" name="cnpj" id="cnpj" class="inputUser" required placeholder="CNPJ"
+              maxlength="18"
+              pattern="\d{2}\.\d{3}\.\d{3}/\d{4}-\d{2}"
+              title="O CNPJ deve estar no formato 00.000.000/0000-00">
+          </div>
+          <div class="inputBox">
+            <input type="text" name="endereco" id="endereco" class="inputUser" required placeholder="Endereço completo" />
+          </div>
 
-        
+          <div class="inputBox">
+            <input type="text" name="telefone" id="telefone" class="inputUser" required placeholder="Telefone"
+              maxlength="15"
+              pattern="\(\d{2}\)\s\d{4,5}-\d{4}"
+              title="O telefone deve estar no formato (00) 00000-0000" />
+          </div>
+
+
           @endif
 
           <div class="inputBox">
@@ -130,7 +126,7 @@
           </div>
 
 
-         
+
 
           <div id="alignBottomEnviar">
             <input
@@ -142,7 +138,7 @@
 
         </form>
 
-    @if ($errors->any())
+        @if ($errors->any())
         <div class="alert alert-danger">
           <ul>
             @foreach ($errors->all() as $error)
@@ -152,7 +148,7 @@
         </div>
         @endif
       </div>
- 
+
 
     </div>
   </div>

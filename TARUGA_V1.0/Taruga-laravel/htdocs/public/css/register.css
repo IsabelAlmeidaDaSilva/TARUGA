@@ -1,233 +1,466 @@
-
 body {
-    font-family: jost;
-    background: #c5ffb6;
-    margin: 0;
-    padding: 0;
-    justify-content: center;
-    align-items: center;
-  }
-
-  /*seta voltar*/
-  .seta {
-    font-size: 2rem;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    height: 70px;
-    width: 90px;
-    margin-top: 20px;
-    margin-left: 40px;
-    text-decoration: none;
-  }
-  
-  .seta a {
-    color: inherit;
-  }
-  
-  .iconSeta {
-    color: #267E64;
-    
-  }
-  
-  .seta:hover {
-    transform: scale(1.1);
-    cursor: pointer;
-    transition: 0.2s;
-  }
-  
-  .seta:active {
-    transform: scale(1.0);
-    transition: 0.2s;
-  }
-  
-  .iconSeta:active {
-    color: #03533a;
-    transition: 0.2s;
-  }
-
-  /*fim seta*/
+  font-family: jost;
+  background: #eefce3;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+}
 
 
-  .inputBox {
-    padding: 13px;
-    border: none;
-    outline: none;
-    font-size: 17px;
-    display: flex;
-    width: 380px;
+/* ==============================
+   SETA VOLTAR
+============================== */
 
-    
-  }
+.seta {
+  width: 90px;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 20;
+}
 
-  .inputBox input {
-    
-    padding: 5px;
-    border: none;
-    border-radius: 6px;
-    font-size: 17px;
-    background-color: #E4E4E4;
-    display: flex;
-    width: 380px;
-    height: 25px;
-  }
+.seta a {
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
 
-  #situacao{
-    padding: 2px;
-    border: none;
-    border-radius: 6px;
-    font-size: 17px;
-    background-color: #E4E4E4;
-    display: flex;
-    width: 380px; 
-    height: 25px;
+.iconSeta {
+  font-size: 40px;
+  color: #268a7a;
+  transform: scale(1);
+  transition: transform 0.25s ease;
+}
 
-  }
+/* Hover: aumenta */
+.seta a:hover .iconSeta {
+  transform: scale(1.15);
+}
+
+/* Clique: diminui */
+.seta a:active .iconSeta {
+  transform: scale(0.85);
+  transition: transform 0.1s ease;
+}
+
+/*fim seta*/
+
+/* ==============================
+   INPUTS E CAMPOS
+============================== */
+
+.inputBox {
+  width: 100%;
+  max-width: 410px;
+  padding: 13px;
+  border: none;
+  outline: none;
+  font-size: 17px;
+  display: flex;
+  justify-content: center;
+}
+
+.inputBox input,
+#situacao {
+  width: 100%;
+  height: 25px;
+  padding: 10px 15px;
+  border: 2px solid transparent;
+  border-radius: 7px;
+  font-family: "Jost", sans-serif;
+  font-size: 16px;
+  background-color: #E4E4E4;
+  color: #333;
+  outline: none;
+
+  transition:
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* Ao passar o mouse */
+.inputBox input:hover,
+#situacao:hover {
+  border-color: rgba(38, 138, 122, 0.4);
+}
+
+/* Ao clicar para preencher */
+.inputBox input:focus,
+#situacao:focus {
+  background-color: white;
+  border-color: #268a7a;
+  box-shadow: 0 0 5px rgba(38, 138, 122, 0.2);
+}
+
+/*TITULO REGISTRO*/
+#TituloRegistro {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 25px;
+} 
+
+#TituloRegistro h2 {
+  font-family: "Jersey 10", sans-serif;
+  color: #268a7a;
+  font-size: 50px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  margin: 0;
+}
+
+/*
+#AlignTituloLogin h2 {
+  font-family: "Jersey 10", sans-serif;
+  color: #6798a3;
+  font-size: 45px;
+  font-weight: bold;
+  letter-spacing: 3px;
+}*/
+
+/* ==============================
+   CONTAINER PRINCIPAL
+============================== */
+
+.alignDivForm {
+  width: 100%;
+  min-height: calc(100vh - 90px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin: 0;
+  box-sizing: border-box;
+  margin-bottom: 80px;
+
+  transform: translateY(-25px);
+}
+
+/* ==============================
+   CARD PRINCIPAL
+============================== */
+
+.DivForm {
+  width: min(850px, 100%);
+  min-height: 515px;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  background-color: #f6fcf9;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 4px 4px 12px rgba(34, 28, 31, 0.2);
+  animation: aparecer 0.5s ease;
+}
+
+/* ==============================
+   LADO ESQUERDO
+============================== */
+
+.div-DivInf {
+  padding: 20px 15px;
+}
+
+.div-DivInf {
+  flex: 0 0 30%;
+  min-width: 0;
+  background-color: #268a7a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 15px;
+}
+
+.DivInf {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Título Taruga */
+
+#TarugaTitulo {
+  font-family: "Jersey 10", sans-serif;
+  font-size: clamp(30px, 3vw, 40px);
+  font-weight: 400;
+  color: white;
+  margin: 0 0 30px;
+}
+
+/* Bem-vindo */
+
+#BemVindoTitulo {
+  font-family: "Jersey 10", sans-serif;
+  font-size: clamp(24px, 3vw, 40px);
+  font-weight: 400;
+  line-height: 1.1;
+  color: white;
+  margin: 0 0 15px;
+}
+
+/* Texto de apresentação */
+#TextTitulo {
+  font-family: "Jost", sans-serif;
+  font-size: clamp(14px, 1.5vw, 18px);
+  color: white;
+  line-height: 1.4;
+  text-align: center;
+  margin: 0 0 20px;
+}
+
+/* Imagem */
+#AlignImgDivInf {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.DivInf img {
+  width: 180px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.DivInf img:hover {
+  transform: scale(1.05);
+}
+
+/*Direito*/
+/* Lado direito */
+.alignLog {
+  width: 70%;
+  min-height: 515px;
+  height: auto;
+  margin-top: 0;
+  padding: 30px 20px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.alignLog form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.alignLog fieldset {
+  border: none;
+}
+
+/*Button Div*/
+/* Botão cadastrar */
+#alignBottomEnviar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+#alignBottomEnviar input {
+  background-color: #268a7a;
+  border: none;
+  width: 180px;
+  max-width: 100%;
+  height: 45px;
+  border-radius: 7px;
+  text-align: center;
+  color: white;
+  font-family: "Jost", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transform: scale(1);
+
+  /* Animação igual ao seu outro CSS */
+  transition: transform 0.3s ease;
+}
+
+#alignBottomEnviar input:hover {
+  background-color: #207567;
+  transform: scale(1.08);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#alignBottomEnviar input:active {
+  transform: scale(0.96);
+}
 
 
+/* ==============================
+   RESPONSIVIDADE - TABLET
+============================== */
 
-  #AlignTituloLogin {
-    margin-top: 30px;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 55px;
-    color: #46828f;
-    text-align: center;
-    font-size: 20px;
-  
-  }
-
-  #AlignTituloLogin h2 {
-    font-family: "Jersey 10", sans-serif;
-    color: #6798a3;
-    font-size: 45px;
-    font-weight: bold;
-    letter-spacing: 3px;
-  }
-
-  /*Rostin*/
-  .alignDivForm {
-    width: 100%;
-    height: 550px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 50px;
-  }
-
+@media (max-width: 768px) {
   .DivForm {
-    background-color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    height: 620px;
-    width: 850px;
-    border-radius: 35px;
-    box-shadow: 4px 4px 4px rgba(34, 28, 31, 0.5);
+    width: 95%;
   }
 
   .div-DivInf {
-    height: 620px;
-    width: 300px;
-    border-bottom-left-radius: 35px;
-    border-top-left-radius: 35px;
-    background-color: #40C49D;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
+    flex: 0 0 32%;
   }
 
-  .DivInf {
-    justify-content: center;
-    align-items: center;
-    height: 500px;
-    width: 85%;
-    margin-top: 80px;
-
-  }
-
-  #TarugaTitulo {
-    font-size: 40px;
-    font-weight: 100;
-    color: #fff;
-    margin-bottom: 45px;
-    font-family: "Jersey 10", sans-serif;
-
-  }
-
-  #BemVindoTitulo {
-    font-size: 30px;
-    font-weight: 100;
-    color: #fff;
-    margin-bottom: 15px;
-    font-family: "Jersey 10", sans-serif;
-  }
-
-  #TextTitulo {
-    font-size: 25px;
-    text-align: center;
-    color: #fff;
-    
-  }
-
-  .DivInf img {
-    height: 120px;
-    width: 120px;
-    
-  }
-
-  .DivInf p {
-    text-align: center;
-    font-size: 21px;
-    
-  }
-
-  /*Direito*/
   .alignLog {
-    height: 500px;
-    width: 70%;
-    margin-top: -40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 68%;
+    padding: 25px 15px;
   }
 
-  .alignLog fieldset {
-    border: none;
+  .inputBox {
+    width: 100%;
+    padding: 10px;
   }
 
-  /*Button Div*/
-  #alignBottomEnviar input {
-    background-color: #8B16C2;
-    margin-left: 130px;
+  .inputBox input,
+  #situacao {
+    width: 95%;
+  }
+
+  #TituloRegistro {
+    font-size: 42px;
+  }
+}
+
+/* ==============================
+   RESPONSIVIDADE - CELULAR
+============================== */
+
+@media (max-width: 550px) {
+  .alignDivForm {
+    min-height: auto;
+    padding: 20px 12px;
+    transform: none;
+  }
+
+  .DivForm {
+    width: 100%;
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .div-DivInf {
+    flex: none;
+    width: 100%;
+    min-height: 260px;
+  }
+
+  .alignLog {
+    width: 100%;
+    min-height: 320px;
+    height: auto;
+    padding: 25px 12px;
+  }
+
+  .alignLog form {
+    width: 100%;
+  }
+
+  #TituloRegistro {
+    font-size: 40px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  .inputBox {
+    width: 100%;
+    padding: 9px;
+  }
+
+  .inputBox input,
+  #situacao {
+    width: 100%;
+    max-width: 410px;
+  }
+
+  #alignBottomEnviar {
+    width: 100%;
     margin-top: 20px;
-    border: none;
-    border-radius: 7px;
+    margin-bottom: 20px;
+  }
+
+  #alignBottomEnviar input {
+    width: 160px;
+  }
+}
+
+/* ==============================
+   CELULARES PEQUENOS
+============================== */
+
+@media (max-width: 360px) {
+  .alignDivForm {
+    padding: 15px 8px;
+  }
+
+  .div-DivInf {
+    min-height: 230px;
+  }
+
+  .alignLog {
+    padding: 20px 8px;
+  }
+
+  #TituloRegistro {
+    font-size: 34px;
+  }
+
+  .inputBox {
+    padding: 7px;
+  }
+
+  .inputBox input,
+  #situacao {
+    font-size: 14px;
+    height: 44px;
+    padding: 8px 10px;
+  }
+
+  #alignBottomEnviar input {
     width: 145px;
-    height: 35px;
-    text-align: center;
-    color: white;
-    font-size: 15px;
-    display: flex;
-    box-shadow: 4px 4px 4px rgba(34, 28, 31, 0.5);
-    transition: transform 0.3s ease;
-
   }
+}
 
-  #alignBottomEnviar input:hover {
-    background-color: #7a1f76fd;
-    transform: scale(1.1); 
-    cursor: pointer;
+/* ==============================
+   TELAS COM POUCA ALTURA
+============================== */
+
+@media (max-height: 650px) and (min-width: 551px) {
+  .alignDivForm {
+    align-items: flex-start;
+    padding-top: 20px;
+    transform: none;
   }
-  #alignBottomEnviar input:active {
-    transform: scale(0.90);
-    background: #5f105b;
+}
+
+/* ==============================
+   ACESSIBILIDADE
+============================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
   }
-
-
- 
-
+}
