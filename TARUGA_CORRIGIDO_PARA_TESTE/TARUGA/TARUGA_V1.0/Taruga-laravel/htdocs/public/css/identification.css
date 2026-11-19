@@ -1,0 +1,612 @@
+body {
+    font-family: jost;
+    background: #ffffff;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Seta voltar */
+.seta {
+    width: 90px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.seta a {
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.iconSeta {
+    font-size: 40px;
+    color: white;
+    transform: scale(1);
+    transition: transform 0.25s ease;
+}
+
+/* Hover: aumenta */
+.seta a:hover .iconSeta {
+    transform: scale(1.15);
+}
+
+/* Clique: diminui */
+.seta a:active .iconSeta {
+    transform: scale(0.85);
+    transition: transform 0.1s ease;
+}
+
+
+.iconSeta:active {
+    transition: 0.2s;
+}
+
+/*Centro página*/
+.alignCenter {
+    background: #eefce3;
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0;
+    padding: 40px 0;
+}
+
+.container-bemVindo {
+    background-color: #eefce3;
+    width: 1320px;
+    min-height: 700px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    border: 1px solid rgb(186, 233, 186);
+    box-shadow: 0px 0px 2px 2px rgba(34, 28, 31, 0.5);
+    overflow: visible;
+}
+
+.header-conteiner {
+    position: relative;
+    display: grid;
+    grid-template-columns: 90px 1fr 90px;
+    align-items: center;
+
+    box-shadow: 0px 2px 2px rgba(34, 28, 31, 0.5);
+    border-radius: 15px 15px 0 0;
+    background-color: #268a7a;
+
+    width: 100%;
+    height: 90px;
+}
+
+.BemVindoP {
+    display: grid;
+    gap: 0px;
+    align-items: center;
+    justify-content: center;
+    margin: 0px;
+    padding: 0px;
+    grid-column: 2;
+    justify-self: center;
+    text-align: center;
+}
+
+.BemVindoP p {
+    font-family: "Jersey 10", serif;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 50;
+    padding: 0px;
+    margin: 0px;
+    line-height: 1;
+    letter-spacing: 1px;
+}
+
+.pais {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.align-p {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-family: "Jost", serif;
+    color: #fafafa;
+    font-size: 20px;
+    font-weight: 200;
+    margin: none;
+}
+
+.professor {
+    font-size: 18px;
+    margin-left: 40px;
+    border-radius: 35px;
+    border: none;
+    height: 325px;
+    width: 210px;
+    background-color: #8FCAEB;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 3px 3px 3px rgba(34, 28, 31, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.professor:has(a:hover) {
+    background-color: #71b0d4;
+    transform: scale(1.1);
+    border: 1px solid white;
+    outline: 1px solid white;
+    color: white;
+}
+
+.professor:has(a:active) {
+    transform: scale(0.90);
+    background: #a4d6f3;
+}
+
+.align-img img {
+    height: 160px;
+    width: 300px;
+}
+
+.aluno {
+    font-size: 18px;
+    margin-left: 40px;
+    border: none;
+    border-radius: 35px;
+    height: 325px;
+    width: 210px;
+    background-color: #aadd77;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 3px 3px 3px rgba(34, 28, 31, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.aluno:has(a:hover) {
+    background-color: #87b857;
+    transform: scale(1.1);
+    border: 1px solid white;
+    outline: 1px solid white;
+    color: white;
+}
+
+.aluno:has(a:active) {
+    transform: scale(0.90);
+    background: #b4df89;
+}
+
+.instituicao {
+    font-size: 18px;
+    margin-left: 40px;
+    border: none;
+    border-radius: 35px;
+    height: 325px;
+    width: 210px;
+    background-color: #A3679D;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 3px 3px 3px rgba(34, 28, 31, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.instituicao:has(a:hover) {
+    background-color: #9b4f93;
+    transform: scale(1.1);
+    border: 1px solid white;
+    outline: 1px solid white;
+    color: white;
+}
+
+.instituicao:has(a:active) {
+    transform: scale(0.90);
+    background: #dd8cd5;
+}
+
+
+.comunUser {
+    font-size: 18px;
+    margin-left: 40px;
+    margin-right: 25px;
+    border: none;
+    border-radius: 35px;
+    height: 325px;
+    width: 210px;
+    background-color: #E59952;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 3px 3px 3px rgba(34, 28, 31, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.comunUser:has(a:hover) {
+    background-color: #bb7738;
+    transform: scale(1.1);
+    border: 1px solid white;
+    outline: 1px solid white;
+    color: white;
+}
+
+.comunUser:has(a:active) {
+    transform: scale(0.90);
+    background: #fab26f;
+}
+
+
+.align-button a {
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    cursor: pointer;
+    background: none;
+    border-radius: 15px;
+    border: 1px solid white;
+    font-family: "Jost", serif;
+    color: white;
+    font-size: 20px;
+    font-weight: 200;
+    height: 45px;
+    width: 130px;
+    transition: transform 0.3s ease;
+}
+
+.align-button a:hover {
+    color: white;
+    border: 1px solid white;
+}
+
+.align-openPopupButton {
+    width: 100%;
+    margin: 35px 0 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+
+.align-itens-popup-button {
+    width: 90%;
+    min-height: 150px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border: 3px dashed #b2d6bf;
+    border-radius: 15px;
+    background: transparent;
+}
+
+.div-img-icon-more img {
+    height: 80px;
+    width: auto;
+}
+
+.div-p-text-cadastro {
+    color: #4d5b72;
+}
+
+.div-btn-btnNTC {
+    height: 100%;
+    width: 300px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.div-btn-btnNTC button {
+    background: #268a7a;
+    width: 200px;
+    height: 45px;
+    border-radius: 5px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    border: 0px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    color: white;
+    font-size: 20px;
+}
+
+.div-btn-btnNTC button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.div-btn-btnNTC button:active {
+    transform: scale(0.96);
+}
+
+.btn-align {
+    margin-top: 45px;
+    display: flex;
+    justify-content: center;
+    /* horizontal */
+    align-items: center;
+    width: 90%;
+}
+
+.textoCadastro {
+    margin: 0;
+    font-size: 18px;
+    color: #555;
+    font-family: "Jost", serif;
+}
+
+/* ===================== POPUP ===================== */
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 999;
+}
+
+/* Caixa principal */
+.popup-content {
+    background: #268a7a;
+    padding: 30px;
+    border-radius: 8px;
+
+    width: 750px;
+    min-height: 300px;
+    height: auto;
+
+    text-align: center;
+    position: relative;
+
+    box-shadow: 3px 3px 3px rgba(34, 28, 31, 0.5);
+    border: 1px solid white;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Título do popup */
+.popup-content p {
+    width: 100%;
+    font-size: 25px;
+    font-weight: bolder;
+    margin: 0 0 15px;
+    color: white;
+}
+
+/* Links */
+.popup-content a {
+    font-size: 15px;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    font-family: "Jost", sans-serif;
+}
+
+/* Botões */
+.popup-content button {
+    width: 140px;
+    height: 140px;
+
+    border: 1px solid white;
+    background-color: #207567;
+    border-radius: 10px;
+
+    margin: 0;
+    padding: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 3px 3px 3px rgba(34, 28, 31, 0.5);
+
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+/* Organização dos links dentro dos botões */
+.popup-content button a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+    width: 100%;
+    height: 100%;
+}
+
+/* Imagens dos botões */
+.popup-content button img {
+    height: 70px;
+    width: 80px;
+    object-fit: contain;
+    margin: 0;
+}
+
+/* Efeito hover */
+.popup-content button:hover {
+    transform: scale(1.1);
+    background-color: #2b8877;
+}
+
+/* Efeito clique */
+.popup-content button:active {
+    transform: scale(0.9);
+}
+
+/* Botão fechar */
+.close-button {
+    position: absolute;
+    top: 13px;
+    right: 8px;
+
+    font-size: 20px;
+    cursor: pointer;
+
+    transition: transform 0.3s ease;
+    z-index: 2;
+}
+
+/* Imagem do X */
+.close-button img {
+    width: 40px;
+    height: 40px;
+
+    margin-left: 15px;
+    margin-top: -7px;
+}
+
+/* Hover do X */
+.close-button:hover {
+    transform: scale(1.1);
+}
+
+/* Clique do X */
+.close-button:active {
+    transform: scale(0.9);
+}
+
+/* ===================== RESPONSIVIDADE ===================== */
+
+/* Notebooks */
+@media (max-width:1366px) {
+
+    .container-bemVindo {
+        width: 95%;
+    }
+
+    .pais {
+        width: 95%;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .professor,
+    .aluno,
+    .instituicao,
+    .comunUser {
+        margin: 0;
+    }
+
+    .align-itens-popup-button {
+        width: 90%;
+    }
+
+}
+
+/* Tablets */
+@media (max-width:1005px) {
+
+    .container-bemVindo {
+        width: 95%;
+    }
+
+    .BemVindoP p:first-child {
+        font-size: 38px !important;
+    }
+
+    .BemVindoP p:last-child {
+        font-size: 18px;
+    }
+
+    .pais {
+        width: 100%;
+        justify-content: center;
+        gap: 25px;
+    }
+
+    .align-itens-popup-button {
+        width: 90%;
+        flex-direction: column;
+        text-align: center;
+    }
+
+}
+
+/* Celulares */
+@media (max-width:768px) {
+
+    .header-conteiner {
+        height: 110px;
+    }
+
+    .BemVindoP p:first-child {
+        font-size: 30px !important;
+    }
+
+    .BemVindoP p:last-child {
+        font-size: 16px;
+    }
+
+    .iconSeta {
+        left: 10px;
+        font-size: 32px;
+    }
+
+    .pais {
+        flex-direction: column;
+    }
+
+    .professor,
+    .aluno,
+    .instituicao,
+    .comunUser {
+        width: 240px;
+    }
+
+    .align-itens-popup-button {
+        width: 95%;
+    }
+
+    .div-btn-btnNTC {
+        width: 100%;
+    }
+
+    .div-btn-btnNTC button {
+        width: 180px;
+    }
+
+    .popup-content {
+        width: 90%;
+        height: auto;
+    }
+
+}

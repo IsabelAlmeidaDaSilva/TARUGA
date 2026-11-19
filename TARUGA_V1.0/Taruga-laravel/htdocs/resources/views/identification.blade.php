@@ -126,8 +126,6 @@
         <p>Como você gostaria de se cadastrar?</p>
         <button><a href="{{ route('choose-register', 'institution') }}"><img src="{{ asset('storage/imgs/Escola_TelaIdent.png') }}">Instiuição!</a></button>
         <button><a href="{{ route('choose-register', 'student') }}"><img src="{{ asset('storage/imgs/User_TelaIdent.png') }}">Usuário</a></button>
-        <button><a href="{{ route('choose-register', 'institution') }}"><img src="{{ asset('storage/imgs/Professora_TelaIdent.png') }}">Professor(a)</a></button>
-        <button><a href="{{ route('choose-register', 'student') }}"><img src="{{ asset('storage/imgs/Bolsa_TelaIdent.png') }}">Aluno(a)</a></button>
     </div>
 </div>
 
