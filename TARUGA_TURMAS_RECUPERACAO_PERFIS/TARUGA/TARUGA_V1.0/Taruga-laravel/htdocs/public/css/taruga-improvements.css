@@ -1,0 +1,72 @@
+/* Melhorias incrementais seguindo a paleta original Taruga: verde, roxo, azul e coral. */
+:root { --taruga-green:#267e64; --taruga-purple:#673ab7; --taruga-blue:#607ad6; --taruga-coral:#db664c; }
+*, *::before, *::after { box-sizing:border-box; }
+html,body { max-width:100%; overflow-x:hidden; }
+img,video { max-width:100%; height:auto; }
+.header { position:relative; z-index:1000; }
+.header .navbar-collapse { z-index:1010; }
+.header .dropdown-menu { z-index:1020; }
+.header .nav-link { padding:.7rem .85rem; border-radius:12px; }
+.header .nav-link:hover,.header .nav-link:focus-visible { background:rgba(255,255,255,.16); }
+.taruga-panel { max-width:1120px; min-height:55vh; }
+.taruga-panel h1 { font-size:clamp(1.8rem,4vw,2.8rem); color:var(--taruga-green); font-weight:800; }
+.taruga-panel h2 { font-size:1.35rem; color:var(--taruga-purple); font-weight:700; }
+.taruga-page-title { display:flex; gap:1rem; align-items:center; justify-content:space-between; flex-wrap:wrap; }
+.taruga-surface { display:block; background:#fffdfb; border:2px solid #d5eadf; border-radius:20px; padding:clamp(1rem,3vw,1.5rem); box-shadow:0 5px 15px rgba(28,70,52,.08); height:auto; width:auto; }
+.taruga-class-card { color:#263d32; text-decoration:none; transition:transform .2s,box-shadow .2s; }
+.taruga-class-card:hover { transform:translateY(-3px); box-shadow:0 8px 20px rgba(28,70,52,.16); color:var(--taruga-green); }
+.taruga-sticker { height:100%; text-align:center; }
+.taruga-sticker h2 { font-size:1.15rem; }
+.taruga-sticker-icon { font-size:3.6rem; line-height:1.5; }
+.taruga-sticker-locked { background:#f1f1f1; }
+.taruga-panel .btn-success { background:var(--taruga-green); border-color:var(--taruga-green); }
+.taruga-panel .form-control,.taruga-panel .form-select { min-height:44px; }
+.taruga-panel .table-responsive { max-width:100%; }
+@media(max-width:991.98px) { .header .navbar-collapse { background:#267e64; padding:1rem; border-radius:0 0 16px 16px; } .header .navbar-nav { align-items:stretch; } .header .dropdown-menu { position:static!important; transform:none!important; } }
+@media(max-width:600px) { .taruga-panel { padding-inline:14px!important; } .taruga-panel .btn { white-space:normal; } .taruga-sticker-icon { font-size:2.6rem; } .footer .row { row-gap:1rem; } }
+
+/* Navegação unificada: todos os itens no mesmo menu, inclusive desktop. */
+.taruga-nav { width:100%; background:#267e64; position:relative; z-index:1030; }
+.taruga-nav-inner { display:flex; justify-content:space-between; align-items:center; gap:1rem; min-height:76px; }
+.taruga-brand {display:flex;align-items:center;gap:.5rem;flex-shrink:1;min-width:0;text-decoration:none;}
+.taruga-brand-name {max-height:43px;max-width:min(190px,38vw);object-fit:contain;}
+.taruga-menu { position:relative; margin-left:auto; }
+.taruga-menu summary { list-style:none; display:flex;gap:.5rem;align-items:center;justify-content:center;cursor:pointer;color:white; background:#245e50;border:2px solid rgba(255,255,255,.55);border-radius:14px;padding:.6rem 1.1rem;min-width:112px;font-weight:700; }
+.taruga-menu summary::-webkit-details-marker {display:none;}
+.taruga-menu summary:hover,.taruga-menu summary:focus-visible {background:#1d5045;outline:2px solid #f4d77e;outline-offset:2px;}
+.taruga-menu-list {display:block; position:absolute;right:0;top:calc(100% + 10px);min-width:min(340px,calc(100vw - 30px));max-height:min(75vh,610px);overflow:auto;list-style:none;padding:.55rem;margin:0;border-radius:16px;border:1px solid #c9e7d8;background:#fff;color:#233f34;box-shadow:0 14px 40px rgba(9,40,27,.22);z-index:1040;}
+.taruga-menu-list li{margin:0;}
+.taruga-menu-list a,.taruga-menu-logout button {color:#23483a;display:flex;align-items:center;gap:.7rem;text-decoration:none;border:0;background:transparent;border-radius:10px;padding:.72rem .85rem;width:100%;font-size:1rem;text-align:left;cursor:pointer;}
+.taruga-menu-list a:hover,.taruga-menu-list a:focus-visible,.taruga-menu-logout button:hover {background:#ddf3e7;color:#145a42;}
+.taruga-menu-logout {border-top:1px solid #dce9e1;margin-top:.5rem!important;padding-top:.4rem;}
+.taruga-summary-toggle{cursor:pointer;display:flex;justify-content:space-between;align-items:center;color:#267e64;font-size:1.3rem;}
+.taruga-summary-toggle::-webkit-details-marker{display:none;}.taruga-summary-toggle::marker{content:'';}
+.taruga-metric {font-size:clamp(1.5rem,4vw,2.4rem);font-weight:800;color:#267e64;line-height:1.25;}
+.taruga-person-link{font-weight:700;text-decoration:underline;color:#1b7055;}
+.taruga-cta-link{font-weight:700;color:#236d53;}
+.taruga-profile-grid{display:flex;gap:1.5rem;align-items:stretch;max-width:100%;}
+.taruga-profile-sidebar{flex:0 1 280px;min-width:0;}
+.taruga-profile-main{flex:1;min-width:0;}
+.taruga-profile-main .taruga-surface{padding:.7rem;}
+@media (max-width:767px){.taruga-profile-grid{flex-direction:column;}.taruga-profile-sidebar,.taruga-profile-main{width:100%;flex:none;}.taruga-nav-inner{padding-block:9px;min-height:62px;}}
+/* Cards usados como links no Taruga, sem inserir links em botoes. */
+a.conhecaMais,a.criarRegistros{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;}
+
+/* A página inicial utiliza links acessíveis em lugar de botoes aninhados. */
+.bemVindo a.conhecaMais,.bemVindo a.criarRegistros{color:#fff!important;font-size:1rem;font-weight:650;text-decoration:none!important;margin:.45rem .35rem!important;min-height:45px;height:auto;padding:.65rem 1rem;vertical-align:middle;max-width:100%;}
+.bemVindo{max-width:100%;}.bemVindo .criarRegistros{width:auto;min-width:150px;}
+@media(max-width:650px){.bemVindo a.conhecaMais,.bemVindo a.criarRegistros{width:100%;max-width:250px;margin:.4rem auto!important;display:flex;}}
+
+/* Seletor por módulo, filtros e formulários das avaliações. */
+.taruga-panel [hidden], .taruga-panel [hidden].d-flex, .taruga-panel [hidden].taruga-choice {display:none!important;}
+.taruga-scroll-select{max-height:310px;overflow-y:auto;border:1px solid #d5eadf;border-radius:14px;padding:.55rem;background:#f8fdf9;}
+.taruga-module-choice{border:1px solid #d0eadb;border-radius:12px;background:#fff;}
+.taruga-module-choice summary{cursor:pointer;padding:.75rem 1rem;color:#1f664e;}
+.taruga-choice{padding:.6rem .7rem;border-radius:9px;cursor:pointer;margin:0;}
+.taruga-choice:hover{background:#e8f7ef;}
+.taruga-panel .table th {white-space:nowrap;}
+.taruga-profile-sidebar form{max-width:100%;}
+.taruga-profile-sidebar .form-control{max-width:100%;}
+.bemVindo .taruga-surface {text-align:left;}
+.bemVindo .taruga-surface p {font-size:1rem;}
+@media(max-width:600px){.taruga-panel .taruga-scroll-select{max-height:235px;}.taruga-panel .taruga-choice {font-size:.95rem;}}
