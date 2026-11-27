@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://taruga.online'),
+    'url' => env('APP_URL', 'http://localhost'),
 
     /*
     |--------------------------------------------------------------------------
@@ -97,7 +97,7 @@ return [
 
     'cipher' => 'AES-256-CBC',
 
-    'key' => env('APP_KEY', 'base64:ZGdxZjF1YTI0NXV0b2ZhZTFsc2t0aWdqbW1uYTM4NDI='),
+    'key' => env('APP_KEY'),
 
     'previous_keys' => [
         ...array_filter(
