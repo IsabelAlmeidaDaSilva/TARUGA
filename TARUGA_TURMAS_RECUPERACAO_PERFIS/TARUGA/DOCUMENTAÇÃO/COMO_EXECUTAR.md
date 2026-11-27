@@ -67,3 +67,8 @@ http://127.0.0.1:8000
 ```
 
 Após esses passos, o sistema estará disponível para utilização.
+
+composer install
+php artisan migrate
+php artisan optimize:clear
+php artisan serve
