@@ -5,6 +5,7 @@
 /public/storage
 /storage/*.key
 /vendor
+/public/uploads/
 
 # Arquivos de ambiente e credenciais
 .env

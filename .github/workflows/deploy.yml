@@ -1,3 +1,4 @@
+
 name: Deploy TARUGA
 
 on:
@@ -49,11 +50,41 @@ jobs:
             -o BatchMode=yes \
             -o StrictHostKeyChecking=yes \
             "$SSH_USER@$SSH_HOST" \
-            "cd /home/taruga/www/taruga && php -v"
+            "cd /home/taruga/www/taruga && php -v && composer --version"
 
-      - name: Simular atualização dos arquivos
+      - name: Ativar manutenção e realizar backup
         run: |
-          rsync -avz --dry-run \
+          ssh -i ~/.ssh/taruga_deploy \
+            -o BatchMode=yes \
+            -o StrictHostKeyChecking=yes \
+            "$SSH_USER@$SSH_HOST" 'bash -se' <<'REMOTE'
+          cd /home/taruga/www/taruga
+
+          php artisan down
+
+          umask 077
+          mkdir -p /home/taruga/backups
+          chmod 700 /home/taruga/backups
+
+          test -s database/database.sqlite
+
+          BACKUP="/home/taruga/backups/database-$(date -u +%Y%m%d-%H%M%S).sqlite"
+
+          php -r '
+              $db = new PDO("sqlite:database/database.sqlite");
+              $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+              $db->exec("PRAGMA busy_timeout=10000");
+              $db->exec("VACUUM INTO " . $db->quote($argv[1]));
+          ' "$BACKUP"
+
+          test -s "$BACKUP"
+
+          echo "Backup realizado com sucesso."
+          REMOTE
+
+      - name: Atualizar arquivos na Alwaysdata
+        run: |
+          rsync -avz \
             --exclude='.env' \
             --exclude='.env.*' \
             --exclude='.git' \
@@ -69,3 +100,53 @@ jobs:
             -e "ssh -i ~/.ssh/taruga_deploy -o BatchMode=yes -o StrictHostKeyChecking=yes" \
             "$PROJECT_PATH/" \
             "$SSH_USER@$SSH_HOST:/home/taruga/www/taruga/"
+
+      - name: Configurar e atualizar Laravel
+        run: |
+          ssh -i ~/.ssh/taruga_deploy \
+            -o BatchMode=yes \
+            -o StrictHostKeyChecking=yes \
+            "$SSH_USER@$SSH_HOST" 'bash -se' <<'REMOTE'
+
+          cd /home/taruga/www/taruga
+
+          mkdir -p storage/app/public
+          mkdir -p storage/app/private
+          mkdir -p storage/framework/cache/data
+          mkdir -p storage/framework/sessions
+          mkdir -p storage/framework/views
+          mkdir -p storage/logs
+          mkdir -p bootstrap/cache
+          mkdir -p public/uploads/profiles
+
+          composer install --no-dev --optimize-autoloader --no-interaction
+
+          php artisan optimize:clear
+
+          php artisan migrate --force
+
+          if [ ! -e public/storage ] && [ ! -L public/storage ]; then
+            php artisan storage:link
+          fi
+
+          php artisan config:cache
+          php artisan view:cache
+
+          php artisan up
+
+          echo "TARUGA atualizado com sucesso!"
+          REMOTE
+
+      - name: Verificar disponibilidade do site
+        run: |
+          curl --fail --silent --show-error \
+            --retry 3 \
+            --output /dev/null \
+            https://taruga.alwaysdata.net/
+
+          echo "Site respondendo corretamente."
+
+      - name: Limpar chave SSH temporária
+        if: always()
+        run: |
+          rm -f ~/.ssh/taruga_deploy
