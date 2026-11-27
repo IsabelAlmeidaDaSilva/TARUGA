@@ -1,0 +1,71 @@
+name: Deploy TARUGA
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+concurrency:
+  group: taruga-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      PROJECT_PATH: TARUGA_TURMAS_RECUPERACAO_PERFIS/TARUGA/TARUGA_V1.0/Taruga-laravel/htdocs
+      SSH_HOST: ${{ secrets.SSH_HOST }}
+      SSH_USER: ${{ secrets.SSH_USER }}
+
+    steps:
+      - name: Baixar código do GitHub
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - name: Configurar SSH
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+
+          printf '%s\n' "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/taruga_deploy
+          chmod 600 ~/.ssh/taruga_deploy
+
+          ssh-keyscan -t ed25519 "$SSH_HOST" > ~/.ssh/known_hosts
+
+          FINGERPRINT=$(ssh-keygen -lf ~/.ssh/known_hosts | awk '{print $2}' | sort -u)
+
+          test "$FINGERPRINT" = "SHA256:5i/vJYokzNsnXAeHkwzEm+3kxPQWwsRzwXFPQ7oOvNI"
+
+      - name: Verificar conexão com Alwaysdata
+        run: |
+          ssh -i ~/.ssh/taruga_deploy \
+            -o BatchMode=yes \
+            -o StrictHostKeyChecking=yes \
+            "$SSH_USER@$SSH_HOST" \
+            "cd /home/taruga/www/taruga && php -v"
+
+      - name: Simular atualização dos arquivos
+        run: |
+          rsync -avz --dry-run \
+            --exclude='.env' \
+            --exclude='.env.*' \
+            --exclude='.git' \
+            --exclude='vendor/' \
+            --exclude='node_modules/' \
+            --exclude='*.sqlite*' \
+            --exclude='*.db' \
+            --exclude='*.db-*' \
+            --exclude='/storage/' \
+            --exclude='/bootstrap/cache/' \
+            --exclude='/public/storage' \
+            --exclude='/public/uploads/' \
+            -e "ssh -i ~/.ssh/taruga_deploy -o BatchMode=yes -o StrictHostKeyChecking=yes" \
+            "$PROJECT_PATH/" \
+            "$SSH_USER@$SSH_HOST:/home/taruga/www/taruga/"

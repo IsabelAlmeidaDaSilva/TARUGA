@@ -5,16 +5,38 @@
 /public/storage
 /storage/*.key
 /vendor
+
+# Arquivos de ambiente e credenciais
 .env
-.env.backup
-.env.production
+.env.*
+!.env.example
+auth.json
+
+# Banco de dados SQLite
+/database/*.sqlite*
+/database/*.db
+/database/*.db-*
+
+# Arquivos de usuários e arquivos temporários
+/storage/app/*
+/storage/logs/*
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+/bootstrap/cache/*.php
+
+# Preservar arquivos de controle dos diretórios
+!.gitignore
+
+# Arquivos de desenvolvimento
 .phpactor.json
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml
-auth.json
 npm-debug.log
 yarn-error.log
+
+# Editores e IDEs
 /.fleet
 /.idea
 /.vscode
